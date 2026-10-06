@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUNTIK DANA VANSONCASH</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #061329;
+    --bg2: #091b38;
+    --blue: #168cff;
+    --cyan: #24cfff;
+    --text: #f5f9ff;
+    --muted: #7f97b7;
+    --border: rgba(70, 160, 255, .16);
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 10% 0%, rgba(0, 174, 234, .13), transparent 30%),
+        radial-gradient(circle at 95% 100%, rgba(57, 75, 220, .14), transparent 32%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+
+    padding: 24px 15px;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 20px 23px;
+
+    background: rgba(9, 27, 56, .90);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.28);
+
+    backdrop-filter: blur(14px);
+
+    margin-bottom: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b6fd3,
+            #1a9eff
+        );
+
+    box-shadow:
+        0 8px 22px rgba(0,125,255,.25),
+        inset 0 1px 0 rgba(255,255,255,.14);
+
+    font-size: 20px;
+}
+
+.brand-text strong {
+    display: block;
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.brand-text span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    background: rgba(31,211,137,.08);
+    border: 1px solid rgba(31,211,137,.14);
+
+    color: #6eeab0;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #29e493;
+
+    box-shadow:
+        0 0 8px rgba(41, 228, 147, .8),
+        0 0 16px rgba(41, 228, 147, .35);
+
+    animation: greenPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes greenPulse {
+    0% {
+        transform: scale(1);
+        opacity: .65;
+        box-shadow:
+            0 0 6px rgba(41, 228, 147, .5),
+            0 0 12px rgba(41, 228, 147, .2);
+    }
+
+    50% {
+        transform: scale(1.55);
+        opacity: 1;
+        box-shadow:
+            0 0 10px rgba(41, 228, 147, .9),
+            0 0 22px rgba(41, 228, 147, .55);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .65;
+        box-shadow:
+            0 0 6px rgba(41, 228, 147, .5),
+            0 0 12px rgba(41, 228, 147, .2);
+    }
+}
+
+/* ================================
+   TITLE
+================================ */
+
+.page-title {
+    padding: 4px 3px 17px;
+}
+
+.page-title .small {
+    color: #5e7b9f;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 6px;
+}
+
+.page-title h1 {
+    font-size: clamp(23px, 5vw, 31px);
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff 0%,
+            #70d9ff 48%,
+            #398fff 100%
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-title p {
+    margin-top: 7px;
+
+    color: #728baa;
+
+    font-size: 11px;
+}
+
+/* ================================
+   MAIN CARD
+================================ */
+
+.main-card {
+    background: rgba(9,27,55,.92);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 23px;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+/* ================================
+   SECTION TITLE
+================================ */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 11px;
+
+    color: #bdd0e8;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .7px;
+}
+
+.section-line {
+    width: 4px;
+    height: 15px;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 0 9px rgba(36,207,255,.35);
+}
+
+/* ================================
+   INPUT
+================================ */
+
+textarea {
+    width: 100%;
+    min-height: 330px;
+
+    display: block;
+
+    padding: 17px;
+
+    resize: vertical;
+    outline: none;
+
+    border: 1px solid rgba(80,150,220,.20);
+    border-radius: 13px;
+
+    background: #f7f9fc;
+    color: #1d2b3b;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    transition: .2s ease;
+}
+
+textarea::placeholder {
+    color: #9aa8b8;
+}
+
+textarea:focus {
+    border-color: rgba(35,164,255,.65);
+
+    box-shadow:
+        0 0 0 3px rgba(35,164,255,.08),
+        0 10px 30px rgba(0,0,0,.12);
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.button-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.copy-btn {
+    min-height: 57px;
+
+    border: 1px solid rgba(90,175,255,.24);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d427d 0%,
+            #1269b8 50%,
+            #174fd0 100%
+        );
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .4px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transition:
+        transform .18s ease,
+        filter .18s ease,
+        box-shadow .18s ease;
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 28px rgba(0,90,190,.24),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.success {
+    background:
+        linear-gradient(
+            135deg,
+            #087653,
+            #0aa875
+        );
+
+    border-color:
+        rgba(70,255,185,.25);
+}
+
+.btn-icon {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 15px;
+}
+
+/* ================================
+   INFO
+================================ */
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 14px;
+
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    background: rgba(26,93,158,.07);
+    border: 1px solid rgba(55,135,210,.08);
+
+    color: #6683a6;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.info-icon {
+    color: #3ebfff;
+    font-weight: 800;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #506988;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 16px;
+    }
+
+    .brand-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand-text strong {
+        font-size: 14px;
+    }
+
+    .status {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    .main-card {
+        padding: 17px;
+    }
+
+    textarea {
+        min-height: 280px;
+    }
+
+    .copy-btn {
+        min-height: 53px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .header {
+        align-items: flex-start;
+    }
+
+    .status {
+        font-size: 0;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .page-title h1 {
+        font-size: 22px;
+    }
+
+    textarea {
+        min-height: 250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ₿
+            </div>
+
+            <div class="brand-text">
+                <strong>VANSONCASH</strong>
+                <span>TRANSACTION SYSTEM</span>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+    </header>
+
+
+    <!-- TITLE -->
+    <div class="page-title">
+
+        <div class="small">
+            VANSONCASH / TRANSACTION
+        </div>
+
+        <h1>SUNTIK DANA VANSONCASH</h1>
+
+        <p>
+            Kelola dan salin data transaksi dengan cepat
+        </p>
+
+    </div>
+
+
+    <!-- MAIN -->
+    <main class="main-card">
+
+        <div class="section-title">
+            <span class="section-line"></span>
+            DATA TRANSAKSI
+        </div>
+
+
+        <textarea
+            id="inputData"
+            placeholder="Masukkan data suntik dana di sini..."
+        ></textarea>
+
+
+       <!-- BUTTONS -->
+<div class="button-area">
+
+    <button
+        class="copy-btn"
+        id="btnRequest"
+        onclick="copyRequest()"
+    >
+        FORM KE EXCEL REQUEST
+    </button>
+
+    <button
+        class="copy-btn"
+        id="btnWd"
+        onclick="copyWD()"
+    >
+        KETERANGAN KE EXCEL WD VANSON
+    </button>
+
+    <button
+        class="copy-btn"
+        id="btnNominal"
+        onclick="copyNominal()"
+    >
+        NOMINAL KE EXCEL WD VANSON
+    </button>
+
+</div>
+
+
+        <div class="info">
+            <span class="info-icon">●</span>
+            Data akan disalin dalam format yang siap ditempel langsung ke Excel.
+        </div>
+
+    </main>
+
+
+    <div class="footer">
+        © 2026 | BY YOGIK
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   AMBIL DATA
+========================================================= */
+
+function getData() {
+
+    return document
+        .getElementById("inputData")
+        .value
+        .trim();
+
+}
+
+
+/* =========================================================
+   REQUEST
+========================================================= */
+
+function copyRequest() {
+
+    const data = getData();
+
+    if (!data) {
+        alert("Silakan masukkan data terlebih dahulu.");
+        return;
+    }
+
+    const lines = data
+        .split(/\r?\n/)
+        .map(x => x.trim())
+        .filter(x => x !== "");
+
+    const result = [];
+
+    let start = 0;
+
+    // Lewati judul
+    if (
+        lines[0] &&
+        lines[0].toUpperCase().includes("MINITOTO SUNTIK DANA")
+    ) {
+        start = 1;
+    }
+
+    // Baca per transaksi:
+    // BANK + NAMA
+    // REKENING
+    // NOMINAL
+    for (let i = start; i + 2 < lines.length; i += 3) {
+
+        const bankNama = lines[i];
+        const rekening = lines[i + 1];
+        const nominal = lines[i + 2];
+
+        const parts = bankNama.split(/\s+/);
+
+        const bank = parts[0];
+        const nama = parts.slice(1).join(" ");
+
+        const hasilBank = "BANK " + bank;
+        const hasilRekening = rekening.replace(/[^\d]/g, "");
+        const hasilNominal = nominal.replace(/[^\d]/g, "");
+
+        // SETIAP DATA HANYA 1 TAB
+        result.push(
+            hasilBank + "\t" +
+            nama + "\t" +
+            hasilRekening + "\t" +
+            hasilNominal
+        );
+    }
+
+    if (!result.length) {
+        alert("Data transaksi tidak ditemukan.");
+        return;
+    }
+
+    copyToClipboard(
+        result.join("\n"),
+        "btnRequest"
+    );
+}
+
+
+/* =========================================================
+   WD VANSON
+========================================================= */
+
+function copyWD() {
+
+    const data = getData();
+
+    if (!data) {
+        alert("Silakan masukkan data terlebih dahulu.");
+        return;
+    }
+
+    const lines = data
+        .split(/\r?\n/)
+        .map(x => x.trim())
+        .filter(x => x !== "");
+
+    const result = [];
+
+    let start = 0;
+
+    // Lewati judul
+    if (
+        lines[0] &&
+        lines[0].toUpperCase().includes("MINITOTO SUNTIK DANA")
+    ) {
+        start = 1;
+    }
+
+    // Baca setiap transaksi
+    for (let i = start; i + 2 < lines.length; i += 3) {
+
+        const bankNama = lines[i];
+
+        if (!bankNama) {
+            continue;
+        }
+
+        const parts = bankNama.split(/\s+/);
+
+        const bank = parts[0];
+        const nama = parts.slice(1).join(" ");
+
+        result.push(
+            "DISBURSES KE BANK WD " +
+            bank +
+            " " +
+            nama
+        );
+    }
+
+    if (!result.length) {
+        alert("Data transaksi tidak ditemukan.");
+        return;
+    }
+
+    copyToClipboard(
+        result.join("\n"),
+        "btnWd"
+    );
+}
+
+
+/* =========================================================
+   COPY CLIPBOARD
+========================================================= */
+
+function copyToClipboard(text, buttonId) {
+
+    const button = document.getElementById(buttonId);
+    const original = button.innerHTML;
+
+    const success = () => {
+
+        button.classList.add("success");
+
+        button.innerHTML = `
+            <span class="btn-icon">✓</span>
+            DATA BERHASIL DISALIN
+        `;
+
+        setTimeout(() => {
+
+            button.classList.remove("success");
+            button.innerHTML = original;
+
+        }, 1600);
+
+    };
+
+
+    if (navigator.clipboard) {
+
+        navigator.clipboard
+            .writeText(text)
+            .then(success)
+            .catch(() => fallbackCopy(text, success));
+
+    } else {
+
+        fallbackCopy(text, success);
+
+    }
+
+}
+
+
+/* =========================================================
+   FALLBACK COPY
+========================================================= */
+
+function fallbackCopy(text, success) {
+
+    const area = document.createElement("textarea");
+
+    area.value = text;
+
+    area.style.position = "fixed";
+    area.style.left = "-9999px";
+
+    document.body.appendChild(area);
+
+    area.focus();
+    area.select();
+
+    document.execCommand("copy");
+
+    area.remove();
+
+    success();
+
+}
+
+function copyNominal() {
+
+    const data = getData();
+
+    if (!data) {
+        alert("Silakan masukkan data terlebih dahulu.");
+        return;
+    }
+
+    const lines = data
+        .split(/\r?\n/)
+        .map(x => x.trim())
+        .filter(x => x !== "");
+
+    const result = [];
+
+    let start = 0;
+
+    // Lewati judul
+    if (
+        lines[0] &&
+        lines[0].toUpperCase().includes("MINITOTO SUNTIK DANA")
+    ) {
+        start = 1;
+    }
+
+    // Baca setiap transaksi
+    // BANK + NAMA
+    // REKENING
+    // NOMINAL
+    for (let i = start; i + 2 < lines.length; i += 3) {
+
+        const nominal = lines[i + 2];
+
+        if (!nominal) {
+            continue;
+        }
+
+        // Ambil angka saja
+        const angka = nominal.replace(/[^\d]/g, "");
+
+        if (!angka) {
+            continue;
+        }
+
+        // Tambahkan minus
+        result.push("-" + angka);
+    }
+
+    if (!result.length) {
+        alert("Nominal tidak ditemukan.");
+        return;
+    }
+
+    copyToClipboard(
+        result.join("\n"),
+        "btnNominal"
+    );
+}
+
+</script>
+
+</body>
+</html>
